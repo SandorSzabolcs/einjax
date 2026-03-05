@@ -8,6 +8,8 @@ EinJAX decomposes tensor operations into:
 
 This enables large-scale sparse tensor workloads (graph neural networks, sparse attention, quantum circuit simulation) to run efficiently on multi-GPU/TPU clusters by skipping zero blocks entirely at the tile level.
 
+A SQL-based implementation is here: https://github.com/yuxineverforever/upper-case-lower-case-einstein-notation
+
 ## Installation
 
 ```bash
