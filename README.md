@@ -8,8 +8,6 @@ EinJAX decomposes tensor operations into:
 
 This enables large-scale sparse tensor workloads (graph neural networks, sparse attention, quantum circuit simulation) to run efficiently on multi-GPU/TPU clusters by skipping zero blocks entirely at the tile level.
 
-A SQL-based implementation is here: https://github.com/yuxineverforever/upper-case-lower-case-einstein-notation
-
 ## Installation
 
 ```bash
@@ -142,60 +140,6 @@ config = CostModelConfig.from_device_type("cpu")
 plan = plan_contraction("ij,jk,kl->il", [(10, 20), (20, 30), (30, 40)], config)
 for step in plan.steps:
     print(f"Contract {step.input_subscripts} -> {step.output_subscript}")
-```
-
-## Examples
-
-Three complete examples are provided in the repository's `examples/` directory:
-
-| Example | Description | Key Concepts |
-|---|---|---|
-| `gnn_sparse.py` | Graph neural network layer: `H' = A @ H @ W` | Sparse adjacency, dense features, two-step execution |
-| `sparse_attention.py` | Sparse transformer attention with block masks | Tile-level sparsity skipping, softmax on sparse blocks |
-| `quantum_circuit.py` | Quantum circuit simulation with sparse gates | Gate embedding, sequential sparse matmul |
-
-Run an example:
-
-```bash
-python -m examples.gnn_sparse --nodes 64 --density 0.1 --tile-size 8
-python -m examples.sparse_attention --seq-len 64 --pattern local --tile-size 8
-python -m examples.quantum_circuit --qubits 4 --tile-size 2
-```
-
-## Project Structure
-
-```
-einjax/
-├── api.py                  # einsum(), analyze() entry points
-├── config.py               # Global config, hardware detection
-├── core/
-│   ├── notation.py         # EinSum parsing & validation
-│   └── types.py            # Expr, TilingScheme, CaseAssignment
-├── tensor/
-│   ├── base.py             # BaseTensor ABC
-│   ├── dense.py            # DenseTensor
-│   ├── sparse.py           # SparseTensor, SparseTensorRelation
-│   ├── stats.py            # Sparsity statistics
-│   └── tiling.py           # Tiling scheme selection
-├── optimizer/
-│   ├── cost_model.py       # Hardware profiles & cost formulas
-│   ├── dp.py               # Dynamic programming optimizer
-│   └── contraction_path.py # opt_einsum integration
-├── sharding/
-│   ├── partition.py        # tile_shape → PartitionSpec mapping
-│   ├── mesh.py             # Device mesh creation
-│   └── reshard.py          # Repartitioning logic
-├── execution/
-│   ├── dense_kernels.py    # jnp.einsum wrapper
-│   ├── engine.py           # DAG execution engine
-│   └── sparse_dispatch.py  # Sparse join/contract/aggregate
-├── kernels/
-│   ├── registry.py         # Pattern-based kernel dispatch
-│   ├── pallas_matmul.py    # Block-sparse matmul kernels
-│   └── pallas_gather.py    # Coordinate join kernels
-├── autodiff/
-│   └── custom_vjp.py       # Custom gradient rules for sparse ops
-└── tests/                  # Unit tests for all modules
 ```
 
 ## Testing
